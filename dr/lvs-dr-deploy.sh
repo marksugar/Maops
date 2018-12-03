@@ -82,9 +82,9 @@ Enter A Number:' ENZ;do
 		if [ `rpm -qa keepalived |wc -l` != 1 ];then
 			echo -e "\033[32m install ipvsadm keepalived \033[0m"
 			yum install keepalived  -y
-			rm -rf /etc/keepalived/keepalived.conf
-			curl -Lks https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/dr/keepalived-master -o ${KEEPCONF}
 		fi	
+		[ ! -f /etc/keepalived/keepalived.conf ]|| rm -rf /etc/keepalived/keepalived.conf && curl -Lks https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/dr/keepalived-master -o ${KEEPCONF}
+	
 
 		echo -e "\033[32m add iptables and ${IPADDERS} \033[0m"
 		curl -Lks https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/dr/addvip.service -o ${ADDVIPCONF}	
@@ -154,9 +154,9 @@ Enter A Number:' ENZ;do
 		if [ `rpm -qa keepalived |wc -l` != 1 ];then
 			echo -e "\033[32m install ipvsadm keepalived \033[0m"
 			yum install keepalived  -y
-			rm -rf /etc/keepalived/keepalived.conf
-			curl -Lks https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/dr/keepalived-slave -o ${KEEPCONF}
-		fi	
+		fi
+		[ ! -f /etc/keepalived/keepalived.conf ]|| rm -rf /etc/keepalived/keepalived.conf && curl -Lks https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/dr/keepalived-master -o ${KEEPCONF}
+			
 
 		echo -e "\033[32m add iptables and ${IPADDERS} \033[0m"
 		curl -Lks https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/dr/addvip.service -o ${ADDVIPCONF}	
