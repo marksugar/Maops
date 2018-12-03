@@ -11,7 +11,7 @@
 #第四个变量为lvs-RS节点端口号，第五个变量为该业务备注信息，第六个变量为lvs节点中使用的端口号，第七个变量为lvs的类型
 
 #Note: The information in the LVS_IP_INF variable below is the requirement variable that needs to be configured. The variables are separated by @ matching, and there are 7 variables in total. Parsed by the requirements of this example:
-The #lvs node forwards the port 20880 to the port 18880 of the 172.25.8.59 172.25.8.60 node by means of the vip of 172.25.8.204.
+#lvs node forwards the port 20880 to the port 18880 of the 172.25.8.59 172.25.8.60 node by means of the vip of 172.25.8.204.
 #[-g|i|m]: LVS type
 # -g: DR
 # -i: TUN
