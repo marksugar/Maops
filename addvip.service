@@ -1,0 +1,12 @@
+[Unit]
+Description=Add lvs vip
+After=keepalived.service multi-user.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/scripts/lvs.sh start
+ExecStop=/scripts/lvs.sh stop
+
+[Install]
+WantedBy=multi-user.target
