@@ -90,6 +90,8 @@ Enter A Number:' ENZ;do
 		curl -Lks https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/dr/addvip.service -o ${ADDVIPCONF}	
 		sed -i  "/10050/a\-A INPUT -p 112 -s ${IPADDERS}  -j ACCEPT" /etc/sysconfig/iptables
 		sed -i  "/10050/a\-A INPUT -s 172.25.0.0/16 -p tcp -m tcp -m state --state NEW -m multiport --dports 20880 -m comment --comment "yewu" -j ACCEPT"   /etc/sysconfig/iptables
+		systemctl daemon-reload
+		systemctl enable addvip.service	
 		systemctl restart iptables 
 		echo -e "请修改配置文件:    ${KEEPCONF} \n            ${ADDVIPCONF} \n而后systemctl start keepalived.service addvip.service"
 		exit 1;;
@@ -162,6 +164,8 @@ Enter A Number:' ENZ;do
 		curl -Lks https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/dr/addvip.service -o ${ADDVIPCONF}	
 		sed -i  "/10050/a\-A INPUT -p 112 -s ${IPADDERS}  -j ACCEPT" /etc/sysconfig/iptables
 		sed -i  "/10050/a\-A INPUT -s 172.25.0.0/16 -p tcp -m tcp -m state --state NEW -m multiport --dports 20880 -m comment --comment "yewu" -j ACCEPT"   /etc/sysconfig/iptables
+		systemctl daemon-reload
+		systemctl enable addvip.service	
 		systemctl restart iptables 
 		echo -e '''
 		\033[32m 请修改配置文件: ${KEEPCONF} \033[0m     
