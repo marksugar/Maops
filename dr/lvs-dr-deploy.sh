@@ -2,6 +2,7 @@
 echo -e '''
 \033[32m Welcome to this script! \033[0m
 \033[32m 请输入数字1，2，3来选择初始化配置 \033[0m
+\033[32m Please enter the numbers 1, 2, 3 to select the initial configuration.  \033[0m
 \033[32m good luck ! \033[0m
 '''
 
@@ -11,6 +12,10 @@ while read -p '
 #		1, lvs-master 初始配置
 #		2, lvs-slave  初始配置
 #		3, 代理节点初始配置
+#		q, quit
+#		1, lvs-mast
+#		2, lvs-slav
+#		3, the initial configuration of the proxy node
 #############################################
 Enter A Number:' ENZ;do
 	case $ENZ in
