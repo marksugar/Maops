@@ -1,0 +1,49 @@
+! Configuration File for keepalived
+
+global_defs {
+   router_id LVS_DEVEL
+}
+
+vrrp_instance platformtransfer {
+    state MASTER
+    interface eth0
+    virtual_router_id 63
+    priority 99
+    advert_int 1
+    authentication {
+        auth_type PASS
+        auth_pass 1111
+    }
+    virtual_ipaddress {
+        172.25.8.204/16 brd 172.25.255.255 dev eth0 label eth0:trans1
+    }
+}
+
+virtual_server 172.25.8.204 20880 {
+    delay_loop 6
+    lb_algo rr
+    lb_kind DR
+    protocol TCP
+    nopreempt
+    garp_master_delay  10
+
+    real_server 172.25.8.59 20880 {
+        weight 1
+        TCP_CHECK {
+            connect_timeout 3
+            nb_get_retry 3
+            delay_before_retry 3
+            connect_port 20880
+        }
+    }
+
+    real_server 172.25.8.60 20880 {
+        weight 1
+        TCP_CHECK {
+            connect_timeout 3
+            nb_get_retry 3
+            delay_before_retry 3
+            connect_port 20880
+        }
+    }
+}
