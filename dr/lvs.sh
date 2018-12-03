@@ -10,6 +10,15 @@
 #通过以上解析，第一个变量绑定vip的网卡，第二个变量为vip，第三个变量为lvs-RS转发节点（可多个，以空格隔开），
 #第四个变量为lvs-RS节点端口号，第五个变量为该业务备注信息，第六个变量为lvs节点中使用的端口号，第七个变量为lvs的类型
 
+#Note: The information in the LVS_IP_INF variable below is the requirement variable that needs to be configured. The variables are separated by @ matching, and there are 7 variables in total. Parsed by the requirements of this example:
+The #lvs node forwards the port 20880 to the port 18880 of the 172.25.8.59 172.25.8.60 node by means of the vip of 172.25.8.204.
+#[-g|i|m]: LVS type
+# -g: DR
+# -i: TUN
+# -m: NAT
+# The default scheduling mode in this script is rr
+# Through the above analysis, the first variable is bound to the NIC of the vip, the second variable is vip, and the third variable is the lvs-RS forwarding node (multiple, separated by spaces),
+# The fourth variable is the lvs-RS node port number, the fifth variable is the service remark information, the sixth variable is the port number used in the lvs node, and the seventh variable is the lvs type.
 
 LVS_IP_INF=`cat << EOF
 eth0@172.25.8.204@172.25.8.59 172.25.8.60@20880@yewu20880@20880@g
