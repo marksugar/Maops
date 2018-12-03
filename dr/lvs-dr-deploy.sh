@@ -174,7 +174,7 @@ Enter A Number:' ENZ;do
 		'''
 		exit 1;;
 	3)
-	read -p "请输入对端VIP IP地址:" IPADDERS
+	read -p "请输入VIP IP地址:" IPADDERS
 		ADDVIPCONF=/usr/lib/systemd/system/addvip.service
 		mkdir -p /scripts
 		curl -Lk https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/dr/lvs-env.sh -o /scripts/lvs.sh
