@@ -174,7 +174,7 @@ Enter A Number:' ENZ;do
 		ADDVIPCONF=/usr/lib/systemd/system/addvip.service
 		mkdir -p /scripts
 		curl -Lk https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/dr/lvs-env.sh -o /scripts/lvs.sh
-		sed -i 's/IPADDERSVIP/${IPADDERS}/g'  /scripts/lvs.sh
+		sed -i "s/IPADDERSVIP/${IPADDERS}/g"  /scripts/lvs.sh
 		chmod +x /scripts/lvs.sh
 		curl -Lks https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/dr/addvip.service -o ${ADDVIPCONF}	
 		systemctl daemon-reload
