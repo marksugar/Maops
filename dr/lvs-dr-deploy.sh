@@ -155,7 +155,7 @@ Enter A Number:' ENZ;do
 			echo -e "\033[32m install ipvsadm keepalived \033[0m"
 			yum install keepalived  -y
 		fi
-		[ ! -f /etc/keepalived/keepalived.conf ]|| rm -rf /etc/keepalived/keepalived.conf && curl -Lks https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/dr/keepalived-master -o ${KEEPCONF}
+		[ ! -f /etc/keepalived/keepalived.conf ]|| rm -rf /etc/keepalived/keepalived.conf && curl -Lks https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/dr/keepalived-slave -o ${KEEPCONF}
 			
 
 		echo -e "\033[32m add iptables and ${IPADDERS} \033[0m"
