@@ -1,4 +1,8 @@
 #!/bin/bash
+read -p "You install role MASTER/BACKUP ?
+         please enter(block letter):" role $role
+read -p "Please enter the use VIP: " vvp $vvp
+
 yum install openssl openssl-devel -y
 curl -Lk http://www.keepalived.org/software/keepalived-2.0.10.tar.gz|tar xz -C /usr/local/
 mkdir /usr/local/keepalived /etc/keepalived -p
@@ -11,7 +15,15 @@ cp /usr/local/keepalived/sbin/keepalived /usr/sbin/
 
 chkconfig keepalived on
 systemctl enable keepalived.service
-curl -Lk https://raw.githubusercontent.com/marksugar/lvs/master/keepliaved/conf/master -o /etc/keepalived//etc/keepalived/keepalived.conf
+curl -Lk https://raw.githubusercontent.com/marksugar/lvs/master/keepliaved/conf/master -o /etc/keepalived/keepalived.conf
+
+sed -i "s/role/${role}/g" /etc/keepalived/keepalived.conf
+sed -i "s/172.25.50.15/${vvp}/g" /etc/keepalived/keepalived.conf
+
+ echo -e "\033[044m keeplived role you deploy is: $role \033[0m"
+ 
+ echo -e "\033[044m VIP address is: $vvp \033[0m"
+
 
 #iptables -I INPUT 5 -p 112 -j ACCEPT
 #-A INPUT -p 112 -s 172.25.12.101 -j ACCEPT
