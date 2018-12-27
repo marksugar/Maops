@@ -5,7 +5,7 @@ global_defs {
 }
 
 vrrp_instance platformtransfer {
-    state MASTER
+    state role
     interface eth0
     virtual_router_id 63
     priority 90
