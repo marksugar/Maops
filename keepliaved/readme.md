@@ -2,5 +2,5 @@
 部署：
 
 ```
-curl -Lk https://raw.githubusercontent.com/marksugar/lvs/master/keepliaved/install.sh|bash
+bash <(curl -s  https://raw.githubusercontent.com/marksugar/lvs/master/keepliaved/install.sh|head )
 ```
