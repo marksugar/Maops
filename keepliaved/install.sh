@@ -20,9 +20,9 @@ curl -Lk https://raw.githubusercontent.com/marksugar/lvs/master/keepliaved/conf/
 sed -i "s/role/${role}/g" /etc/keepalived/keepalived.conf
 sed -i "s/172.25.50.15/${vvp}/g" /etc/keepalived/keepalived.conf
 
- echo -e "\033[044m keeplived role you deploy is: $role \033[0m"
+ echo -e "\033[044m keeplived role you deploy is:\033[0m"  $role
  
- echo -e "\033[044m VIP address is: $vvp \033[0m"
+ echo -e "\033[044m VIP address is:\033[0m" $vvp
 
 
 #iptables -I INPUT 5 -p 112 -j ACCEPT
