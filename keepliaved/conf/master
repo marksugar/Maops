@@ -1,0 +1,20 @@
+! Configuration File for keepalived
+
+global_defs {
+   router_id LVS_DEVEL
+}
+
+vrrp_instance platformtransfer {
+    state MASTER
+    interface eth0
+    virtual_router_id 63
+    priority 90
+    advert_int 1
+    authentication {
+        auth_type PASS
+        auth_pass 1111
+    }
+    virtual_ipaddress {
+        172.25.50.15/16 brd 172.25.255.255 dev eth0 label eth0:vip
+    }
+}
