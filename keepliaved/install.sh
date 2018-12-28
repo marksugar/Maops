@@ -7,7 +7,10 @@ yum install openssl openssl-devel libnl libnl-devel -y
 curl -Lk http://www.keepalived.org/software/keepalived-2.0.10.tar.gz|tar xz -C /usr/local/
 mkdir /usr/local/keepalived /etc/keepalived -p
 
-cd /usr/local/keepalived-2.0.10 && ./configure --prefix=/usr/local/keepalived  && make && make install  
+cd /usr/local/keepalived-2.0.10 
+./configure --prefix=/usr/local/keepalived
+make
+make install  
 cp /usr/local/keepalived-2.0.10/keepalived/etc/init.d/keepalived /etc/init.d/ 
 cp /usr/local/keepalived/etc/sysconfig/keepalived  /etc/sysconfig/ 
 cp /usr/local/keepalived/sbin/keepalived /usr/sbin/ 
@@ -27,4 +30,5 @@ sed -i "s/172.25.50.15/${vvp}/g" /etc/keepalived/keepalived.conf
 #iptables -I INPUT 5 -p 112 -j ACCEPT
 #-A INPUT -p 112 -s 172.25.12.101 -j ACCEPT
 
-systemctl start keepalived.service && ip a
+systemctl start keepalived.service
+ip a
