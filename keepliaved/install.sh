@@ -3,12 +3,11 @@ read -p "You install role MASTER/BACKUP ?
          please enter(block letter):" role $role
 read -p "Please enter the use VIP: " vvp $vvp
 
-yum install openssl openssl-devel -y
+yum install openssl openssl-devel libnl libnl-devel -y
 curl -Lk http://www.keepalived.org/software/keepalived-2.0.10.tar.gz|tar xz -C /usr/local/
 mkdir /usr/local/keepalived /etc/keepalived -p
 
-cd /usr/local/keepalived-2.0.10 && ./configure --prefix=/usr/local/keepalived
-make && make install 
+cd /usr/local/keepalived-2.0.10 && ./configure --prefix=/usr/local/keepalived && make && make install 
 cp /usr/local/keepalived-2.0.10/keepalived/etc/init.d/keepalived /etc/init.d/
 cp /usr/local/keepalived/etc/sysconfig/keepalived  /etc/sysconfig/
 cp /usr/local/keepalived/sbin/keepalived /usr/sbin/
