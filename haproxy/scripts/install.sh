@@ -13,6 +13,6 @@ chmod +x /etc/init.d/haproxy
 chkconfig haproxy on
 chkconfig --add haproxy
 
-curl -Lk https://raw.githubusercontent.com/marksugar/docker-haproxy1.6.5/master/haproxy.cfg -o /etc/haproxy/haproxy.cfg
+curl -Lk https://raw.githubusercontent.com/marksugar/Maops/master/haproxy/conf/haproxy.cfg -o /etc/haproxy/haproxy.cfg
 systemctl start haproxy
 haproxy -v
