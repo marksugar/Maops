@@ -22,8 +22,8 @@ curl -Lk https://raw.githubusercontent.com/marksugar/lvs/master/keepliaved/conf/
 sed -i "s/role/${role}/g" /etc/keepalived/keepalived.conf
 sed -i "s/172.25.50.15/${vvp}/g" /etc/keepalived/keepalived.conf
 
-sed -i '/-A INPUT -j REJECT/i\-A INPUT -p 112 -j ACCEPT' /etc/sysconfig/iptables
-systemctl restart iptables
+#sed -i '/-A INPUT -j REJECT/i\-A INPUT -p 112 -j ACCEPT' /etc/sysconfig/iptables
+#systemctl restart iptables
 echo -e "\033[044m keeplived role you deploy is:\033[0m"  $role
  
 echo -e "\033[044m VIP address is:\033[0m" $vvp
