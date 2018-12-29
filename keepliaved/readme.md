@@ -12,3 +12,9 @@ You install role MASTER/BACKUP ?
          please enter(block letter):MASTER
 Please enter the use VIP: 172.16.100.1
 ```
+
+如果有必要，你需要放行iptables
+```
+sed -i '/-A INPUT -j REJECT/i\-A INPUT -p 112 -j ACCEPT' /etc/sysconfig/iptables
+systemctl restart iptables
+```
