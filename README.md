@@ -1,3 +1,12 @@
+
+
+- 蓝色：echo -e "\033[34m[ $1 ]\033[0m"
+- 绿色：echo -e "\033[32m[ $1 ]\033[0m"
+- 红色：echo -e "\033[31m\033[01m[ $1 ]\033[0m"
+- 红色动态：echo -e "\033[31m\033[01m\033[05m[ $1 ]\033[0m"
+- 黄色：echo -e "\033[33m\033[01m[ $1 ]\033[0m"
+- 黄色动态：echo -e "\033[33m\033[01m\033[05m[ $1 ]\033[0m"
+
 # lvs
 
 lvs-dr-deploy
@@ -5,4 +14,31 @@ lvs-dr-deploy
 ```
 bash < (curl -s https://raw.githubusercontent.com/marksugar/lvs/master/dr/lvs-dr-deploy.sh|more)
 
+```
+
+# haproxy
+
+curl -Lk https://raw.githubusercontent.com/marksugar/Maops/master/haproxy/scripts/install.sh|bash
+
+# keepalived
+
+
+部署：
+
+```
+bash <(curl -s  https://raw.githubusercontent.com/marksugar/lvs/master/keepliaved/install.sh|more )
+```
+
+而后根据提示,输入角色是MASTER或者BACKUP,以及VIP
+```
+[root@linuxea ~]# bash <(curl -s  https://raw.githubusercontent.com/marksugar/lvs/master/keepliaved/install.sh|more)
+You install role MASTER/BACKUP ?
+         please enter(block letter):MASTER
+Please enter the use VIP: 172.16.100.1
+```
+
+如果有必要，你需要放行iptables
+```
+sed -i '/-A INPUT -j REJECT/i\-A INPUT -p 112 -j ACCEPT' /etc/sysconfig/iptables
+systemctl restart iptables
 ```
