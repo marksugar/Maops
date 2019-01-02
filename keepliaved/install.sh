@@ -17,7 +17,13 @@ cp /usr/local/keepalived/sbin/keepalived /usr/sbin/
 
 chkconfig keepalived on
 systemctl enable keepalived.service
-curl -Lk https://raw.githubusercontent.com/marksugar/lvs/master/keepliaved/conf/master -o /etc/keepalived/keepalived.conf
+
+if [ "${role}" == MASTER ];then
+   curl -Lk https://raw.githubusercontent.com/marksugar/lvs/master/keepliaved/conf/master -o /etc/keepalived/keepalived.conf
+fi
+if [ "${role}" == BACKUP ];then
+   curl -Lk https://raw.githubusercontent.com/marksugar/lvs/master/keepliaved/conf/backup -o /etc/keepalived/keepalived.conf
+fi
 
 sed -i "s/role/${role}/g" /etc/keepalived/keepalived.conf
 sed -i "s/172.25.50.15/${vvp}/g" /etc/keepalived/keepalived.conf
