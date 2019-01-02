@@ -1,11 +1,10 @@
 
-
-- <font color=335BFF>蓝色</font>：`echo -e "\033[34m[ $1 ]\033[0m"`
-- <font color=33FF49>绿色</font>：`echo -e "\033[32m[ $1 ]\033[0m"`
+- <font color=red>蓝色</font>：`echo -e "\033[34m[ $1 ]\033[0m"`
+- <font color=red>绿色</font>：`echo -e "\033[32m[ $1 ]\033[0m"`
 - <font color=red>红色</font>：`echo -e "\033[31m\033[01m[ $1 ]\033[0m"`
 - <font color=red>红色动态</font>：`echo -e "\033[31m\033[01m\033[05m[ $1 ]\033[0m"`
-- <font color=FFF933>黄色</font>：`echo -e "\033[33m\033[01m[ $1 ]\033[0m"`
-- <font color=FFF933>黄色动态</font>：`echo -e "\033[33m\033[01m\033[05m[ $1 ]\033[0m"`
+- <font color=red>黄色</font>：`echo -e "\033[33m\033[01m[ $1 ]\033[0m"`
+- <font color=red>黄色动态</font>：`echo -e "\033[33m\033[01m\033[05m[ $1 ]\033[0m"`
 
 # lvs
 
