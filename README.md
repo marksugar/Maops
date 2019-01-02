@@ -6,7 +6,21 @@
 - <font color=red>黄色</font>：`echo -e "\033[33m\033[01m[ $1 ]\033[0m"`
 - <font color=red>黄色动态</font>：`echo -e "\033[33m\033[01m\033[05m[ $1 ]\033[0m"`
 
+- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `红色`echo -e "\033[31m\033[01m[ $1 ]\033[0m"
+- ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `#c5f015` 
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#1589F0` 
+
+- <font color=335BFF>蓝色</font>：`echo -e "\033[34m[ $1 ]\033[0m"`
+- <font color=33FF49>绿色</font>：`echo -e "\033[32m[ $1 ]\033[0m"`
+- <font color=red>红色</font>：`echo -e "\033[31m\033[01m[ $1 ]\033[0m"`
+- <font color=red>红色动态</font>：`echo -e "\033[31m\033[01m\033[05m[ $1 ]\033[0m"`
+- <font color=FFF933>黄色</font>：`echo -e "\033[33m\033[01m[ $1 ]\033[0m"`
+- <font color=FFF933>黄色动态</font>：`echo -e "\033[33m\033[01m\033[05m[ $1 ]\033[0m"`
+
+
 # lvs
+
+
 
 lvs-dr-deploy
 
