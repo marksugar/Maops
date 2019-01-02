@@ -1,7 +1,7 @@
 
 
-- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `红色``echo -e "\033[31m\033[01m[ $1 ]\033[0m"`
-- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `红色动态``echo -e "\033[31m\033[01m\033[05m[ $1 ]\033[0m"`
+- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `红色` `echo -e "\033[31m\033[01m[ $1 ]\033[0m"`
+- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `红色动态` `echo -e "\033[31m\033[01m\033[05m[ $1 ]\033[0m"`
 - ![#335BFF](https://placehold.it/15/1589F0/000000?text=+) `蓝色` `echo -e "\033[34m[ $1 ]\033[0m"`
 - ![#4CFF33](https://placehold.it/15/1589F0/000000?text=+) `绿色` `echo -e "\033[32m[ $1 ]\033[0m"`
 
