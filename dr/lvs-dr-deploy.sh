@@ -93,7 +93,12 @@ Enter A Number:' ENZ;do
 		systemctl daemon-reload
 		systemctl enable addvip.service	
 		systemctl restart iptables 
-		echo -e "请修改配置文件:    ${KEEPCONF} \n            ${ADDVIPCONF} \n而后systemctl start keepalived.service addvip.service"
+		echo -e "
+		\033[32m 请修改配置文件: "${KEEPCONF}" \033[0m     
+		\033[32m 请修改配置文件: "${ADDVIPCONF}" \033[0m 
+		\033[32m 而后systemctl start keepalived.service addvip.service \033[0m 
+		"		
+		#echo -e "请修改配置文件:    ${KEEPCONF} \n            ${ADDVIPCONF} \n而后systemctl start keepalived.service addvip.service"
 		exit 1;;
 	2)
 	read -p "请输入对端lvs IP地址:" IPADDERS
@@ -167,11 +172,11 @@ Enter A Number:' ENZ;do
 		systemctl daemon-reload
 		systemctl enable addvip.service	
 		systemctl restart iptables 
-		echo -e '''
-		\033[32m 请修改配置文件: ${KEEPCONF} \033[0m     
-		\033[32m 请修改配置文件: ${ADDVIPCONF} \033[0m 
+		echo -e "
+		\033[32m 请修改配置文件: "${KEEPCONF}" \033[0m     
+		\033[32m 请修改配置文件: "${ADDVIPCONF}" \033[0m 
 		\033[32m 而后systemctl start keepalived.service addvip.service \033[0m 
-		'''
+		"
 		exit 1;;
 	3)
 	read -p "请输入VIP IP地址:" IPADDERS
