@@ -88,8 +88,8 @@ Enter A Number:' ENZ;do
 
 		echo -e "\033[32m add iptables and ${IPADDERS} \033[0m"
 		curl -Lks https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/dr/addvip.service -o ${ADDVIPCONF}	
-		sed -i  "/10050/a\-A INPUT -p 112 -s ${IPADDERS}  -j ACCEPT" /etc/sysconfig/iptables
-		sed -i  "/10050/a\-A INPUT -s 172.25.0.0/16 -p tcp -m tcp -m state --state NEW -m multiport --dports 20880 -m comment --comment "yewu" -j ACCEPT"   /etc/sysconfig/iptables
+		sed -i  "/-A INPUT -j REJECT/i\-A INPUT -p 112 -s ${IPADDERS}  -j ACCEPT" /etc/sysconfig/iptables
+		sed -i  "/-A INPUT -j REJECT/i\-A INPUT -s 172.25.0.0/16 -p tcp -m tcp -m state --state NEW -m multiport --dports 20880 -m comment --comment "yewu" -j ACCEPT"   /etc/sysconfig/iptables
 		systemctl daemon-reload
 		systemctl enable addvip.service	
 		systemctl restart iptables 
@@ -162,8 +162,8 @@ Enter A Number:' ENZ;do
 
 		echo -e "\033[32m add iptables and ${IPADDERS} \033[0m"
 		curl -Lks https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/dr/addvip.service -o ${ADDVIPCONF}	
-		sed -i  "/10050/a\-A INPUT -p 112 -s ${IPADDERS}  -j ACCEPT" /etc/sysconfig/iptables
-		sed -i  "/10050/a\-A INPUT -s 172.25.0.0/16 -p tcp -m tcp -m state --state NEW -m multiport --dports 20880 -m comment --comment "yewu" -j ACCEPT"   /etc/sysconfig/iptables
+		sed -i  "/-A INPUT -j REJECT/i\-A INPUT -p 112 -s ${IPADDERS}  -j ACCEPT" /etc/sysconfig/iptables
+		sed -i  "/-A INPUT -j REJECT/i\-A INPUT -s 172.25.0.0/16 -p tcp -m tcp -m state --state NEW -m multiport --dports 20880 -m comment --comment "yewu" -j ACCEPT"   /etc/sysconfig/iptables
 		systemctl daemon-reload
 		systemctl enable addvip.service	
 		systemctl restart iptables 
