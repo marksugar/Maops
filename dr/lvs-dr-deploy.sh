@@ -190,7 +190,7 @@ Enter A Number:' ENZ;do
 		systemctl daemon-reload
 		systemctl enable addvip.service	
 		systemctl start addvip.service
-		sed -i "/10050/a\\-A INPUT -s 172.25.0.0/16 -p tcp -m tcp -m state --state NEW -m multiport --dports 20880 -m comment --comment "yewu" -j ACCEPT"   /etc/sysconfig/iptables
+		sed -i "/-A INPUT -j REJECT/i\-A INPUT -s 172.25.0.0/16 -p tcp -m tcp -m state --state NEW -m multiport --dports 20880 -m comment --comment "yewu" -j ACCEPT"   /etc/sysconfig/iptables
 		cat /scripts/lvs.sh
 		exit 1;;
 	esac
