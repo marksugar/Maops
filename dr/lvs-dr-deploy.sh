@@ -67,6 +67,7 @@ Enter A Number:' ENZ;do
 		#IPADDERS=$(ip a|awk '/eth0/'|awk '/inet/{print $2}')
 		ADDVIPCONF=/usr/lib/systemd/system/addvip.service
 		KEEPCONF=/etc/keepalived/keepalived.conf
+		LVSCONF=/scripts/lvs.sh
 				
 		mkdir -p /scripts 
 		curl -Lks https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/dr/lvs.sh -o /scripts/lvs.sh
@@ -95,7 +96,7 @@ Enter A Number:' ENZ;do
 		systemctl restart iptables 
 		echo -e "
 		\033[32m 请修改配置文件: "${KEEPCONF}" \033[0m     
-		\033[32m 请修改配置文件: "${ADDVIPCONF}" \033[0m 
+		\033[32m 请修改配置文件: "${LVSCONF}" \033[0m 
 		\033[32m 而后systemctl start keepalived.service addvip.service \033[0m 
 		"		
 		#echo -e "请修改配置文件:    ${KEEPCONF} \n            ${ADDVIPCONF} \n而后systemctl start keepalived.service addvip.service"
@@ -174,7 +175,7 @@ Enter A Number:' ENZ;do
 		systemctl restart iptables 
 		echo -e "
 		\033[32m 请修改配置文件: "${KEEPCONF}" \033[0m     
-		\033[32m 请修改配置文件: "${ADDVIPCONF}" \033[0m 
+		\033[32m 请修改配置文件: "${LVSCONF}" \033[0m 
 		\033[32m 而后systemctl start keepalived.service addvip.service \033[0m 
 		"
 		exit 1;;
