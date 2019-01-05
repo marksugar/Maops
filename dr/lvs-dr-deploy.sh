@@ -98,6 +98,7 @@ Enter A Number:' ENZ;do
 		\033[32m 请修改配置文件: "${KEEPCONF}" \033[0m     
 		\033[32m 请修改配置文件: "${LVSCONF}" \033[0m 
 		\033[32m 而后systemctl start keepalived.service addvip.service \033[0m 
+		\033[32m 你可能还需要放行防火墙规则，master/backup都要 \033[0m 		
 		"		
 		#echo -e "请修改配置文件:    ${KEEPCONF} \n            ${ADDVIPCONF} \n而后systemctl start keepalived.service addvip.service"
 		exit 1;;
