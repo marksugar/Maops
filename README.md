@@ -11,12 +11,12 @@
 # version
 
 
-|#| Version         |   scripts    | type          | User ID | port      |date      |
-|-| ----------------|------------- | ------------- | ------- | --------- |--------- |
-|1| 1.9.0           |    shell     | ![haproxy](http://www.haproxy.org/img/HAProxyCommunityEdition_60px.png)       |  haproxy       | 1080      |2018      |
-|2| 1.27-7.el7      |    shell     | Linux Virtual Server   | root    | 112       |2018      |
-|3| 2.0.10          |    shell     | Keepalived    | root    | 112       |2018      |
-|4| 3.0.0           |    shell     | git-cli       | None    | None      |20190111  |
+|#|App| Version         |   scripts    | type          | User ID | port      |date      |
+|-|-|----------------|------------- | ------------- | ------- | --------- |--------- |
+|1|haproxy|1.9.0           |    shell     | ![haproxy](http://www.haproxy.org/img/HAProxyCommunityEdition_60px.png)       |  haproxy       | 1080      |2018      |
+|2|Linux Virtual Server|1.27-7.el7      |    shell     | ![Linux Virtual Server](https://raw.githubusercontent.com/marksugar/Maops/master/image/lvs.png)   | root    | 112       |2018      |
+|3|keepalived|2.0.10          |    shell     | ![Keepalived](https://raw.githubusercontent.com/marksugar/Maops/master/image/keepalived.png)   | root    | 112       |2018      |
+|4|redis-cli|3.0.0           |    shell     | ![redis-cli](https://raw.githubusercontent.com/marksugar/Maops/master/image/redis-cli.png.png)       | None    | None      |20190111  |
 
 # 目录
 
