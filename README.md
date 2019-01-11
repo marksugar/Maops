@@ -8,11 +8,24 @@
 - ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `黄色` `echo -e "\033[33m\033[01m[ $1 ]\033[0m"`
 - ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `黄色动态` `echo -e "\033[33m\033[01m\033[05m[ $1 ]\033[0m"`
 
+- version
+
+| Version         |   scripts    | type          | User ID | port      |date      |
+| ----------------|------------- | ------------- | ------- | --------- |--------- |
+| 1.9.0           |    shell     | harpoxy       | haproxy | 1080      |2018      |
+| 1.27-7.el7      |    shell     | ipvsadm dr    | root    | 112       |2018      |
+| 2.0.10          |    shell     | Keepalived    | root    | 112       |2018      |
+| 3.0.0           |    shell     | git-cli       | None    | None      |20190111  |
+
+- 目录
+
+- [lvs-dr](#lvs)
+- [haproxy](#haproxy)
+- [keepalived](#keepalived)
+- [redis-cli](#redis-cli)
 
 
 # lvs
-
-
 
 lvs-dr-deploy
 
@@ -46,4 +59,8 @@ Please enter the use VIP: 172.16.100.1
 ```
 sed -i '/-A INPUT -j REJECT/i\-A INPUT -p 112 -j ACCEPT' /etc/sysconfig/iptables
 systemctl restart iptables
+```
+# redis-cli 
+```
+curl -Lk https://raw.githubusercontent.com/marksugar/Maops/master/redis-cli/install.sh|bash
 ```
