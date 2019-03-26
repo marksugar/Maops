@@ -28,7 +28,7 @@
 * [haproxy](#haproxy)
 * [keepalived](#keepalived)
 * [redis-cli](#redis-cli)
-* [mariadb-client](#mariadb-client)
+* [mariadb-client](#mariadb-cli)
 
 
 # lvs
