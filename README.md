@@ -28,6 +28,7 @@
 * [haproxy](#haproxy)
 * [keepalived](#keepalived)
 * [redis-cli](#redis-cli)
+* [mariadb-client](#mariadb-client)
 
 
 # lvs
@@ -68,4 +69,8 @@ systemctl restart iptables
 # redis-cli 
 ```
 curl -Lk https://raw.githubusercontent.com/marksugar/Maops/master/redis-cli/install.sh|bash
+```
+# mariadb-cli
+```
+curl -Lk https://raw.githubusercontent.com/marksugar/Maops/master/mariadb-client/mariadb-cli.sh |bash
 ```
