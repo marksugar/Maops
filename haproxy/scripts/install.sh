@@ -3,6 +3,9 @@ curl -Lk https://www.haproxy.org/download/1.9/src/haproxy-1.9.0.tar.gz |tar xz -
 cd /usr/local/haproxy-1.9.0 && make TARGET=linux2628 ARCH=x86_64 PREFIX=$PRDIR
 make install PREFIX=$PRDIR
 
+cd /usr/local/haproxy-1.9.0/contrib/halog && make
+cp halog /usr/local/bin/
+
 mkdir /etc/haproxy/ -p
 useradd haproxy -s /sbin/nologin -M
 cp /usr/local/haproxy/sbin/haproxy /usr/sbin/
