@@ -2,9 +2,9 @@
 * Application version
 USE ： nginx-1.10.2  php-5.6.29  mariadb-10.1.19-linux-x86_64
 ```
-curl -Lks4 https://raw.githubusercontent.com/LinuxEA-Mark/nmp/master/nginx-install.sh |bash
-curl -LKs4 https://raw.githubusercontent.com/LinuxEA-Mark/nmp/master/php-install%20.sh |bash
-curl -LKs4 https://raw.githubusercontent.com/LinuxEA-Mark/nmp/master/mariadb-install.sh |bash
+curl -Lks4 https://raw.githubusercontent.com/marksugar/Maops/master/nmp/nginx-install.sh |bash
+curl -LKs4 https://raw.githubusercontent.com/marksugar/Maops/master/nmp/php-install%20.sh |bash
+curl -LKs4 https://raw.githubusercontent.com/marksugar/Maops/master/nmp/mariadb-install.sh |bash
 ```
 * Databases Create table:
 Delete the test tables, modify the root password, as follows
