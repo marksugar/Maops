@@ -53,11 +53,11 @@ Enter A Number:' ENZ;do
 		if [ `echo $(curl -I -s -w "%{http_code}" -o /dev/null http://mirrors.ds.com)` == 200 ];then 
 			echo -e "\033[32mUpcoming intranet mirrors : http://mirrors.ds.com\033[0m"
 			if ! grep -q mirrors.ds.com /etc/hosts; then sed -i '/^::1/a \\n10.10.10.250    mirrors.ds.com' /etc/hosts;fi;
-			curl -Lk https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/CentOS-LocalBase.repo > /etc/yum.repos.d/CentOS-Base.repo
-			curl -Lk https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/epel.repo  > /etc/yum.repos.d/epel.repo
+			curl -Lk https://raw.githubusercontent.com/marksugar/lvs/master/CentOS-LocalBase.repo > /etc/yum.repos.d/CentOS-Base.repo
+			curl -Lk https://raw.githubusercontent.com/marksugar/lvs/master/epel.repo  > /etc/yum.repos.d/epel.repo
 		else
 			echo -e "\033[32mUnable to use intranet mirror http://mirrors.ds.com and use public network http://mirror.centos.org/\033[0m"
-			curl -Lk https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo
+			curl -Lk https://raw.githubusercontent.com/marksugar/lvs/master/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo
 			[ -f /etc/yum.repos.d/CentOS-Base.repo ]|| rm -rf /etc/yum.repos.d/epel.repo
 			yum install epel* -y
 		fi
@@ -70,7 +70,7 @@ Enter A Number:' ENZ;do
 		LVSCONF=/scripts/lvs.sh
 				
 		mkdir -p /scripts 
-		curl -Lks https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/dr/lvs.sh -o /scripts/lvs.sh
+		curl -Lks https://raw.githubusercontent.com/marksugar/lvs/master/dr/lvs.sh -o /scripts/lvs.sh
 		chmod +x /scripts/lvs.sh 
 		systemctl daemon-reload
 		systemctl enable addvip.service
@@ -84,11 +84,11 @@ Enter A Number:' ENZ;do
 			echo -e "\033[32m install ipvsadm keepalived \033[0m"
 			yum install keepalived  -y
 		fi	
-		[ ! -f /etc/keepalived/keepalived.conf ]|| rm -rf /etc/keepalived/keepalived.conf && curl -Lks https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/dr/keepalived-master -o ${KEEPCONF}
+		[ ! -f /etc/keepalived/keepalived.conf ]|| rm -rf /etc/keepalived/keepalived.conf && curl -Lks https://raw.githubusercontent.com/marksugar/lvs/master/dr/keepalived-master -o ${KEEPCONF}
 	
 
 		echo -e "\033[32m add iptables and ${IPADDERS} \033[0m"
-		curl -Lks https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/dr/addvip.service -o ${ADDVIPCONF}	
+		curl -Lks https://raw.githubusercontent.com/marksugar/lvs/master/dr/addvip.service -o ${ADDVIPCONF}	
 		sed -i  "/-A INPUT -j REJECT/i\-A INPUT -p 112 -s ${IPADDERS}  -j ACCEPT" /etc/sysconfig/iptables
 		sed -i  "/-A INPUT -j REJECT/i\-A INPUT -s 172.25.0.0/16 -p tcp -m tcp -m state --state NEW -m multiport --dports 20880 -m comment --comment "yewu" -j ACCEPT"   /etc/sysconfig/iptables
 		systemctl daemon-reload
@@ -134,11 +134,11 @@ Enter A Number:' ENZ;do
 		if [ `echo $(curl -I -s -w "%{http_code}" -o /dev/null http://mirrors.ds.com)` == 200 ];then 
 			echo -e "\033[32mUpcoming intranet mirrors : http://mirrors.ds.com\033[0m"
 			if ! grep -q mirrors.ds.com /etc/hosts; then sed -i '/^::1/a \\n10.10.10.250    mirrors.ds.com' /etc/hosts;fi;
-			curl -Lk https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/CentOS-LocalBase.repo > /etc/yum.repos.d/CentOS-Base.repo
-			curl -Lk https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/epel.repo  > /etc/yum.repos.d/epel.repo
+			curl -Lk https://raw.githubusercontent.com/marksugar/lvs/master/CentOS-LocalBase.repo > /etc/yum.repos.d/CentOS-Base.repo
+			curl -Lk https://raw.githubusercontent.com/marksugar/lvs/master/epel.repo  > /etc/yum.repos.d/epel.repo
 		else
 			echo -e "\033[32mUnable to use intranet mirror http://mirrors.ds.com and use public network http://mirror.centos.org/\033[0m"
-			curl -Lk https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo
+			curl -Lk https://raw.githubusercontent.com/marksugar/lvs/master/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo
 			[ -f /etc/yum.repos.d/CentOS-Base.repo ]|| rm -rf /etc/yum.repos.d/epel.repo
 			yum install epel* -y
 		fi
@@ -150,7 +150,7 @@ Enter A Number:' ENZ;do
 		KEEPCONF=/etc/keepalived/keepalived.conf
 				
 		mkdir -p /scripts 
-		curl -Lks https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/dr/lvs.sh -o /scripts/lvs.sh
+		curl -Lks https://raw.githubusercontent.com/marksugar/lvs/master/dr/lvs.sh -o /scripts/lvs.sh
 		chmod +x /scripts/lvs.sh 
 		systemctl daemon-reload
 		systemctl enable addvip.service
@@ -164,11 +164,11 @@ Enter A Number:' ENZ;do
 			echo -e "\033[32m install ipvsadm keepalived \033[0m"
 			yum install keepalived  -y
 		fi
-		[ ! -f /etc/keepalived/keepalived.conf ]|| rm -rf /etc/keepalived/keepalived.conf && curl -Lks https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/dr/keepalived-slave -o ${KEEPCONF}
+		[ ! -f /etc/keepalived/keepalived.conf ]|| rm -rf /etc/keepalived/keepalived.conf && curl -Lks https://raw.githubusercontent.com/marksugar/lvs/master/dr/keepalived-slave -o ${KEEPCONF}
 			
 
 		echo -e "\033[32m add iptables and ${IPADDERS} \033[0m"
-		curl -Lks https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/dr/addvip.service -o ${ADDVIPCONF}	
+		curl -Lks https://raw.githubusercontent.com/marksugar/lvs/master/dr/addvip.service -o ${ADDVIPCONF}	
 		sed -i  "/-A INPUT -j REJECT/i\-A INPUT -p 112 -s ${IPADDERS}  -j ACCEPT" /etc/sysconfig/iptables
 		sed -i  "/-A INPUT -j REJECT/i\-A INPUT -s 172.25.0.0/16 -p tcp -m tcp -m state --state NEW -m multiport --dports 20880 -m comment --comment "yewu" -j ACCEPT"   /etc/sysconfig/iptables
 		systemctl daemon-reload
@@ -184,10 +184,10 @@ Enter A Number:' ENZ;do
 	read -p "请输入VIP IP地址:" IPADDERS
 		ADDVIPCONF=/usr/lib/systemd/system/addvip.service
 		mkdir -p /scripts
-		curl -Lk https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/dr/lvs-env.sh -o /scripts/lvs.sh
+		curl -Lk https://raw.githubusercontent.com/marksugar/lvs/master/dr/lvs-env.sh -o /scripts/lvs.sh
 		sed -i "s/IPADDERSVIP/${IPADDERS}/g"  /scripts/lvs.sh
 		chmod +x /scripts/lvs.sh
-		curl -Lks https://raw.githubusercontent.com/LinuxEA-Mark/lvs/master/dr/addvip.service -o ${ADDVIPCONF}	
+		curl -Lks https://raw.githubusercontent.com/marksugar/lvs/master/dr/addvip.service -o ${ADDVIPCONF}	
 		systemctl daemon-reload
 		systemctl enable addvip.service	
 		systemctl start addvip.service
