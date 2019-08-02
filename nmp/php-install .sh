@@ -70,5 +70,5 @@ yum install -y gcc gcc-c++ automake autoconf libtool make \
        --with-gettext=/usr/local/gettext && make && make install && mkdir /data/logs/php-fpm -p
 cp /usr/local/php-5.6.29/php.ini-production /usr/local/php/lib/php.ini
 sed -i 's/;date.timezone =/date.timezone = Asia\/Shanghai/' /usr/local/php/lib/php.ini
-curl -Lks4 https://raw.githubusercontent.com/LinuxEA-Mark/nmp/master/php-fpm -o $itt/php-fpm && chmod +x $itt/php-fpm
-curl -Lks4 https://raw.githubusercontent.com/LinuxEA-Mark/nmp/master/php-fpm.conf -o /usr/local/php/etc/php-fpm.conf
+curl -Lks4 https://raw.githubusercontent.com/marksugar/Maops/master/nmp/php-fpm -o $itt/php-fpm && chmod +x $itt/php-fpm
+curl -Lks4 https://raw.githubusercontent.com/marksugar/Maops/master/nmp/php-fpm.conf -o /usr/local/php/etc/php-fpm.conf
