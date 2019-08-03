@@ -46,7 +46,7 @@ cd $phpath/nginx-${version} && ./configure --prefix=${installPath} \
 make && make install 
 if [ `echo $?` == '0' ];then 
 	mkdir -p /var/tmp/nginx/{client,fastcgi,proxy,uwsgi} /data/logs/nginx /data/wwwroot && mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak \
-	&& curl -Lk4  https://raw.githubusercontent.com/marksugar/Maops/master/nginx/conf/nginx.conf -o /etc/nginx/nginx.cnf \
+	&& curl -Lk4  https://raw.githubusercontent.com/marksugar/Maops/master/nginx/conf/nginx.conf -o /etc/nginx/nginx.conf \
 	&& curl -Lk4 https://raw.githubusercontent.com/marksugar/Maops/master/nginx/conf/nginx.service -o /lib/systemd/system/nginx.service \
 	&& systemctl daemon-reload \
 cat > /data/wwwroot/index.php	<<EOF
