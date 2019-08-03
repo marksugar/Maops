@@ -17,8 +17,8 @@
 |2|Linux Virtual Server|1.27-7.el7      |    shell     | ![Linux Virtual Server](https://raw.githubusercontent.com/marksugar/Maops/master/image/lvs.png)   | root    | 112       |2018      |
 |3|keepalived|2.0.10          |    shell     | ![Keepalived](https://raw.githubusercontent.com/marksugar/Maops/master/image/keepalived.png)   | root    | 112       |2018      |
 |4|redis-cli|3.0.0           |    shell     |<img src="https://cdn-images-1.medium.com/max/1200/1*i1d88Q8NNrRv6kjf7Ssw4g.png" width="244" height="68">       | None    | None      |20190111  |
-
-
+|5|nginx|1.16.0         |    shell     |<img src="http://nginx.org/nginx.png" width="244" height="68">       | None    | None      |20190803  |
+|6|php-fpm|7.3.8      |    shell     |<img src="https://www.php.net/images/logos/php-logo.svg" width="244" height="68">       | None    | None      |20190803  |
 
 
 
@@ -29,7 +29,8 @@
 * [keepalived](#keepalived)
 * [redis-cli](#redis-cli)
 * [mariadb-client](#mariadb-cli)
-
+* [nginx](#nginx)
+* [php](#php)
 
 # lvs
 
@@ -73,4 +74,14 @@ curl -Lk https://raw.githubusercontent.com/marksugar/Maops/master/redis-cli/inst
 # mariadb-cli
 ```
 curl -Lk https://raw.githubusercontent.com/marksugar/Maops/master/mariadb-client/mariadb-cli.sh |bash
+```
+# nginx
+bash -s nginx用户名 nginx版本号
+```
+curl -Lk https://raw.githubusercontent.com/marksugar/Maops/master/nginx/nginxInstall.sh|bash -s www 1.16.0
+```
+# php
+bash -s php用户名 php版本号
+```
+curl -Lk https://raw.githubusercontent.com/marksugar/Maops/master/php/php7/phpInstall.sh |bash -s www 7.3.8
 ```
