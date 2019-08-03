@@ -1,0 +1,14 @@
+[Unit]
+Description=nginx start script
+After=keepalived.service multi-user.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+#ExecStartPre=/usr/local/nginx/sbin/nginx -t -c /etc/nginx/nginx.conf
+ExecStart=/usr/local/nginx/sbin/nginx
+ExecReload=/usr/local/nginx/sbin/nginx -s reload
+ExecStop=/usr/local/nginx/sbin/nginx -s stop
+
+[Install]
+WantedBy=multi-user.target
