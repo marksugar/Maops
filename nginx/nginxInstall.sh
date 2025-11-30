@@ -38,6 +38,7 @@ cd $phpath/nginx-${version} && ./configure --prefix=${installPath} \
 --with-http_flv_module \
 --with-file-aio \
 --with-stream \
+--with-http_geoip_module \
 --with-http_mp4_module \
 --http-client-body-temp-path=/var/tmp/nginx/client \
 --http-proxy-temp-path=/var/tmp/nginx/proxy \
