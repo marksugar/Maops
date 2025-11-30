@@ -23,7 +23,7 @@ else
 
 groupadd -r -g 499 ${hpUser} && useradd -u 499 -s /sbin/nologin -c 'web server' -g ${hpUser} ${hpUser} -M
 curl -Lk http://nginx.org/download/nginx-${version}.tar.gz  |tar xz -C $phpath
-yum install openssl-devel pcre pcre-devel gcc make tar -y
+yum install openssl-devel pcre pcre-devel gcc make tar zlib-devel -y
 cd $phpath/nginx-${version} && ./configure --prefix=${installPath} \
 --conf-path=/etc/nginx/nginx.conf \
 --user=${hpUser} \
@@ -38,7 +38,6 @@ cd $phpath/nginx-${version} && ./configure --prefix=${installPath} \
 --with-http_flv_module \
 --with-file-aio \
 --with-stream \
---with-http_geoip_module \
 --with-http_mp4_module \
 --http-client-body-temp-path=/var/tmp/nginx/client \
 --http-proxy-temp-path=/var/tmp/nginx/proxy \
