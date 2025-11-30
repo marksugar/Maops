@@ -23,7 +23,7 @@ else
 
 groupadd -r -g 499 ${hpUser} && useradd -u 499 -s /sbin/nologin -c 'web server' -g ${hpUser} ${hpUser} -M
 curl -Lk http://nginx.org/download/nginx-${version}.tar.gz  |tar xz -C $phpath
-yum install openssl-devel pcre pcre-devel gcc make -y
+yum install openssl-devel pcre pcre-devel gcc make tar -y
 cd $phpath/nginx-${version} && ./configure --prefix=${installPath} \
 --conf-path=/etc/nginx/nginx.conf \
 --user=${hpUser} \
