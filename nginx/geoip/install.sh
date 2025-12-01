@@ -30,7 +30,7 @@ Enter \$1 and \$2, respectively, which are the running user and version number o
 exit
 else
 
-yum install openssl-devel pcre pcre-devel gcc make tar zlib-devel git -y
+yum install openssl-devel pcre pcre-devel gcc make tar zlib-devel git  perl cpanminus -y 
 
 curl -Lk https://github.com/maxmind/geoip-api-c/releases/download/v1.6.12/GeoIP-1.6.12.tar.gz | tar xz -C /$phpath
 cd $phpath/GeoIP-1.6.12 && ./configure && make &&  make install
