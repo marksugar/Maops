@@ -59,6 +59,7 @@ cd $phpath/nginx-${version} && ./configure --prefix=${installPath} \
 --with-http_gzip_static_module \
 --with-http_geoip_module \
 --add-module=$phpath/ngx_http_geoip2_module \
+--with-http_realip_module \
 --with-http_ssl_module \
 --with-http_flv_module \
 --with-file-aio \
